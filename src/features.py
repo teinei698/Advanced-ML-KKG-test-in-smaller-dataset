@@ -31,13 +31,20 @@ def compute_features_for_one_triple(graph, head_entity, relation_name, tail_enti
     relation_2hop = get_k_hop_neighbors(graph, relation_node, 2)
     tail_2hop = get_k_hop_neighbors(graph, tail_entity, 2)
 
+    # 2 hop may be not enough so i add 3 hop as a parallel group
+    head_3hop = get_k_hop_neighbors(graph, head_entity, 3)
+    relation_3hop = get_k_hop_neighbors(graph, relation_node, 3)
+    tail_3hop = get_k_hop_neighbors(graph, tail_entity, 3)
 
     one_hop_head_tail = len(head_1hop.intersection(tail_1hop))
     two_hop_head_tail = len(head_2hop.intersection(tail_2hop))
+    three_hop_head_tail = len(head_3hop.intersection(tail_3hop))
 
     # Only head tail
     one_hop_triple_intersection = len(head_1hop.intersection(relation_1hop).intersection(tail_1hop))
     two_hop_triple_intersection = len(head_2hop.intersection(relation_2hop).intersection(tail_2hop))
+    three_hop_triple_intersection = len(head_3hop.intersection(relation_3hop).intersection(tail_3hop))
+
     total_relation_neighbors = len(relation_1hop)
 
     return {
@@ -45,6 +52,8 @@ def compute_features_for_one_triple(graph, head_entity, relation_name, tail_enti
         "one_hop_triple_intersection": one_hop_triple_intersection,
         "two_hop_head_tail": two_hop_head_tail,
         "two_hop_triple_intersection": two_hop_triple_intersection,
+        "three_hop_head_tail": three_hop_head_tail,
+        "three_hop_triple_intersection": three_hop_triple_intersection,
         "relation_degree_1hop": total_relation_neighbors
     }
 

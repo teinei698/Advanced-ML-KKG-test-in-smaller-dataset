@@ -1,0 +1,9 @@
+model,features,accuracy,f1,auc
+Logistic Regression - head_tail_only,"one_hop_head_tail, two_hop_head_tail, three_hop_head_tail",0.9392,0.942684766214178,0.9503328
+MLP - head_tail_only,"one_hop_head_tail, two_hop_head_tail, three_hop_head_tail",0.94,0.943267776096823,0.96571328
+Logistic Regression - triple_intersection_only,"one_hop_triple_intersection, two_hop_triple_intersection, three_hop_triple_intersection",0.8064,0.7843137254901961,0.9196416
+MLP - triple_intersection_only,"one_hop_triple_intersection, two_hop_triple_intersection, three_hop_triple_intersection",0.8852,0.8873184138201806,0.95669952
+Logistic Regression - two_hop_only,"two_hop_head_tail, two_hop_triple_intersection",0.8032,0.7817213842058562,0.91696736
+MLP - two_hop_only,"two_hop_head_tail, two_hop_triple_intersection",0.8536,0.8634328358208955,0.9316239999999999
+Logistic Regression - all_features,"one_hop_head_tail, two_hop_head_tail, three_hop_head_tail, one_hop_triple_intersection, two_hop_triple_intersection, three_hop_triple_intersection, relation_degree_1hop",0.9768,0.9771473601260835,0.97830112
+MLP - all_features,"one_hop_head_tail, two_hop_head_tail, three_hop_head_tail, one_hop_triple_intersection, two_hop_triple_intersection, three_hop_triple_intersection, relation_degree_1hop",0.98,0.9802994483845547,0.986888

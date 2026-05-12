@@ -44,7 +44,7 @@ def main():
     train_path = os.path.join(data_folder, "train_triples.csv")
     output_path = os.path.join(output_folder, "train_graph.pkl")
 
-    print("\Reading train triples...")
+    print("\n Reading train triples...")
     train_dataframe = pd.read_csv(train_path)
 
     print("Building graph...")
